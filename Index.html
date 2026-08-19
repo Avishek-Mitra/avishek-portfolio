@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avishek Mitra — Data Analyst · Web Developer · Technology Consultant</title>
+<meta name="description" content="Avishek Mitra — Data Analyst, Web Developer and Technology Consultant based in Kolkata, India. Turning data into insight and ideas into working products.">
+
+<!--
+  ============================================================
+  EDIT-ME GUIDE — search for these remaining bracketed tags
+  ============================================================
+  Already filled in: phone (7001209871), email (avishekmitra773@gmail.com),
+  LinkedIn, GitHub profile link, and profile photo.
+
+  Still to fill in:
+  [ADD RESUME PDF LINK]         → Resume section download button (upload your resume PDF somewhere and link it here)
+  [ADD GITHUB PROJECT LINK]     → each project card (9 spots)
+  [ADD LIVE DEMO LINK]          → project cards with a working demo (5 spots)
+  [ADD EXACT TECHNOLOGIES USED] → Project 7, Automated Plant Watering System (2 spots)
+  ============================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* =================== TOKENS =================== */
+:root{
+  --ink:#0B0F1A;
+  --surface:#121729;
+  --surface-2:#1B2238;
+  --border:#2A3352;
+  --paper:#F6F4EE;
+  --paper-2:#EDEAE1;
+  --ivory:#ECE9E1;
+  --slate:#8B93A7;
+  --slate-dark:#5B6478;
+
+  --teal:#3FD6C7;      /* Data Analytics lane */
+  --teal-dim:#1E4E49;
+  --indigo:#7C8CFF;    /* Web Development lane */
+  --indigo-dim:#2A2E5C;
+  --gold:#D8B463;      /* Technology Consulting lane */
+  --gold-dim:#4A3E1F;
+
+  --display: 'Sora', system-ui, sans-serif;
+  --body: 'Inter', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --radius: 14px;
+  --radius-sm: 8px;
+  --maxw: 1180px;
+  --ease: cubic-bezier(.22,.9,.32,1);
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important;}
+}
+body{
+  margin:0;
+  background:var(--ink);
+  color:var(--ivory);
+  font-family:var(--body);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%; display:block;}
+a{color:inherit; text-decoration:none;}
+ul{margin:0; padding:0; list-style:none;}
+h1,h2,h3,h4{font-family:var(--display); margin:0; font-weight:700; letter-spacing:-0.01em;}
+p{margin:0;}
+button{font-family:inherit; cursor:pointer;}
+.container{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+section{position:relative;}
+.section-pad{padding:112px 0;}
+@media (max-width:768px){.section-pad{padding:72px 0;}}
+
+.mono{font-family:var(--mono);}
+.eyebrow{
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:var(--mono); font-size:12.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--slate); margin-bottom:18px;
+}
+.eyebrow .dot{width:6px; height:6px; border-radius:50%; background:currentColor;}
+.eyebrow.tag-da{color:var(--teal);}
+.eyebrow.tag-wd{color:var(--indigo);}
+.eyebrow.tag-tc{color:var(--gold);}
+
+.section-head{max-width:640px; margin-bottom:56px;}
+.section-head h2{font-size:clamp(28px,3.6vw,40px); color:var(--ivory);}
+.section-head p{color:var(--slate); margin-top:14px; font-size:17px;}
+.light .section-head h2{color:#161B29;}
+.light .section-head p{color:#5B6478;}
+
+/* =================== LIGHT / DARK SECTION VARIANTS =================== */
+.light{background:var(--paper); color:#232A3D;}
+.light .eyebrow{color:#7B8296;}
+.light .eyebrow.tag-da{color:#1B8A7C;}
+.light .eyebrow.tag-wd{color:#4C58C9;}
+.light .eyebrow.tag-tc{color:#A67F2C;}
+
+/* =================== SCROLLBAR / SELECTION =================== */
+::selection{background:var(--teal); color:#04201C;}
+
+/* =================== NAV =================== */
+header.nav{
+  position:sticky; top:0; z-index:100;
+  backdrop-filter:blur(14px);
+  background:rgba(11,15,26,.78);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:var(--maxw); margin:0 auto; padding:16px 28px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.brand{
+  font-family:var(--mono); font-weight:600; font-size:16px; letter-spacing:.02em;
+  display:flex; align-items:center; gap:10px; color:var(--ivory);
+}
+.brand .brand-dot{width:8px; height:8px; border-radius:2px; background:var(--teal); box-shadow:0 0 0 3px var(--teal-dim);}
+.nav-links{display:flex; align-items:center; gap:34px;}
+.nav-links a{
+  font-size:14.5px; color:var(--slate); font-weight:500; position:relative; padding:4px 0;
+  transition:color .25s var(--ease);
+}
+.nav-links a:hover{color:var(--ivory);}
+.nav-links a::after{
+  content:""; position:absolute; left:0; bottom:-2px; width:0; height:1px; background:var(--teal);
+  transition:width .3s var(--ease);
+}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--teal); color:#04201C; font-weight:600; font-size:14px;
+  padding:10px 20px; border-radius:100px; border:none;
+  transition:transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.nav-cta:hover{transform:translateY(-2px); box-shadow:0 10px 28px -8px rgba(63,214,199,.55);}
+.nav-toggle{display:none; background:none; border:1px solid var(--border); color:var(--ivory); width:40px; height:40px; border-radius:8px; align-items:center; justify-content:center;}
+.nav-toggle svg{width:18px; height:18px;}
+
+@media (max-width:920px){
+  .nav-links{
+    position:fixed; inset:64px 0 0 0; background:var(--ink); border-top:1px solid var(--border);
+    flex-direction:column; align-items:flex-start; padding:32px 28px; gap:22px;
+    transform:translateY(-8px); opacity:0; pointer-events:none; transition:all .3s var(--ease);
+  }
+  .nav-links.open{transform:translateY(0); opacity:1; pointer-events:auto;}
+  .nav-links a{font-size:20px;}
+  .nav-toggle{display:flex;}
+  .nav-cta{display:none;}
+  .nav-links .nav-cta-mobile{display:inline-flex; margin-top:8px;}
+}
+
+/* =================== BUTTONS =================== */
+.btn{
+  display:inline-flex; align-items:center; gap:10px; justify-content:center;
+  padding:14px 26px; border-radius:100px; font-weight:600; font-size:15px;
+  border:1px solid transparent; transition:transform .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease), color .25s var(--ease);
+  white-space:nowrap;
+}
+.btn-primary{background:var(--teal); color:#04201C;}
+.btn-primary:hover{transform:translateY(-2px); box-shadow:0 14px 32px -10px rgba(63,214,199,.5);}
+.btn-ghost{background:transparent; border-color:var(--border); color:var(--ivory);}
+.btn-ghost:hover{border-color:var(--teal); color:var(--teal); transform:translateY(-2px);}
+.btn-sm{padding:10px 18px; font-size:13.5px;}
+.light .btn-ghost{border-color:#D7D2C4; color:#232A3D;}
+.light .btn-ghost:hover{border-color:#1B8A7C; color:#1B8A7C;}
+
+/* =================== HERO =================== */
+.hero{
+  padding:96px 0 90px;
+  overflow:hidden;
+  position:relative;
+}
+.hero-grid{
+  display:grid; grid-template-columns:1.15fr .85fr; gap:60px; align-items:center;
+}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr; gap:48px;}}
+
+.hero-kicker{font-family:var(--mono); font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:var(--slate); margin-bottom:22px;}
+.hero h1{font-size:clamp(38px,5.4vw,64px); line-height:1.05; color:var(--ivory);}
+.hero h1 span{color:var(--teal);}
+.hero .role-line{
+  font-family:var(--mono); font-size:clamp(13px,1.6vw,16px); letter-spacing:.04em; color:var(--slate);
+  margin-top:22px; display:flex; flex-wrap:wrap; gap:10px 0;
+}
+.hero .role-line b{color:var(--ivory); font-weight:600;}
+.hero .role-line em{font-style:normal; color:var(--border); margin:0 10px;}
+.hero p.lede{font-size:18px; color:#C7CBD6; max-width:520px; margin-top:26px; line-height:1.7;}
+.hero-ctas{display:flex; gap:14px; margin-top:36px; flex-wrap:wrap;}
+.hero-socials{display:flex; gap:14px; margin-top:40px;}
+.icon-btn{
+  width:42px; height:42px; border-radius:50%; border:1px solid var(--border);
+  display:flex; align-items:center; justify-content:center; color:var(--slate);
+  transition:all .25s var(--ease);
+}
+.icon-btn svg{width:18px; height:18px;}
+.icon-btn:hover{border-color:var(--teal); color:var(--teal); transform:translateY(-3px);}
+
+/* photo frame */
+.photo-wrap{position:relative; display:flex; justify-content:center;}
+.photo-frame{
+  width:280px; height:340px; border-radius:20px;
+  background:linear-gradient(160deg, var(--surface), var(--surface-2));
+  border:1px solid var(--border);
+  display:flex; align-items:center; justify-content:center; flex-direction:column;
+  position:relative; overflow:hidden;
+}
+.photo-frame img{width:100%; height:100%; object-fit:cover; object-position:center 18%; display:block;}
+.photo-frame .initials{font-family:var(--display); font-size:74px; font-weight:800; color:var(--border); letter-spacing:-.02em;}
+.photo-frame .ph-label{position:absolute; bottom:18px; left:18px; right:18px; font-family:var(--mono); font-size:11px; color:var(--slate-dark); letter-spacing:.05em;}
+.photo-frame::before{
+  content:""; position:absolute; inset:0;
+  background:
+    linear-gradient(90deg, transparent 0 49%, rgba(255,255,255,.03) 50%, transparent 51% 100%);
+  background-size:22px 22px;
+  pointer-events:none;
+}
+.photo-badge{
+  position:absolute; bottom:-16px; left:50%; transform:translateX(-50%);
+  background:var(--ink); border:1px solid var(--border); border-radius:100px;
+  padding:9px 18px; font-family:var(--mono); font-size:12px; color:var(--teal);
+  display:flex; align-items:center; gap:8px; white-space:nowrap;
+}
+
+/* signal lanes svg */
+.signal-wrap{margin-top:64px;}
+.signal-wrap svg{width:100%; height:auto; display:block;}
+.lane-legend{display:flex; gap:28px; margin-top:18px; flex-wrap:wrap;}
+.lane-legend .item{display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:12px; color:var(--slate);}
+.lane-legend .sw{width:16px; height:2px; border-radius:2px;}
+.sw-da{background:var(--teal);} .sw-wd{background:var(--indigo);} .sw-tc{background:var(--gold);}
+.lane-path{stroke-dasharray:6 7; animation:dash 9s linear infinite;}
+@keyframes dash{to{stroke-dashoffset:-260;}}
+.pulse-dot{animation:pulse 2.6s ease-in-out infinite;}
+@keyframes pulse{0%,100%{r:5; opacity:1;} 50%{r:8; opacity:.55;}}
+
+/* =================== REVEAL ON SCROLL =================== */
+.reveal{opacity:0; transform:translateY(22px); transition:opacity .7s var(--ease), transform .7s var(--ease);}
+.reveal.in{opacity:1; transform:translateY(0);}
+
+/* =================== ABOUT =================== */
+.about-grid{display:grid; grid-template-columns:1.3fr .9fr; gap:56px; align-items:start;}
+@media (max-width:860px){.about-grid{grid-template-columns:1fr;}}
+.about-grid p{font-size:17px; color:#4A5164; margin-bottom:18px; line-height:1.8;}
+.trait-list{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+@media (max-width:520px){.trait-list{grid-template-columns:1fr;}}
+.trait{
+  background:#fff; border:1px solid #E4E0D4; border-radius:var(--radius-sm);
+  padding:16px 16px; display:flex; align-items:flex-start; gap:10px; font-size:14px; color:#333A4C; font-weight:500;
+}
+.trait svg{width:17px; height:17px; flex-shrink:0; margin-top:2px; color:#1B8A7C;}
+
+/* =================== EXPERTISE CARDS =================== */
+.cards-3{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+@media (max-width:900px){.cards-3{grid-template-columns:1fr;}}
+.xcard{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+  padding:32px 28px; position:relative; overflow:hidden;
+  transition:transform .35s var(--ease), border-color .35s var(--ease);
+}
+.xcard:hover{transform:translateY(-6px); border-color:var(--lane-color, var(--teal));}
+.xcard .bar{position:absolute; top:0; left:0; right:0; height:3px; background:var(--lane-color);}
+.xcard .num{font-family:var(--mono); font-size:12px; color:var(--lane-color); letter-spacing:.1em; margin-bottom:16px; display:block;}
+.xcard h3{font-size:21px; color:var(--ivory); margin-bottom:12px;}
+.xcard p.desc{color:var(--slate); font-size:15px; line-height:1.65; margin-bottom:20px;}
+.xcard .taglist{display:flex; flex-wrap:wrap; gap:8px;}
+.xcard .taglist span{
+  font-size:12.5px; padding:6px 11px; border-radius:100px; background:var(--surface-2); color:#C7CBD6; font-family:var(--mono);
+}
+.xcard.c-da{--lane-color:var(--teal);}
+.xcard.c-wd{--lane-color:var(--indigo);}
+.xcard.c-tc{--lane-color:var(--gold);}
+
+/* =================== SKILLS =================== */
+.skill-groups{display:grid; grid-template-columns:repeat(2,1fr); gap:22px;}
+@media (max-width:760px){.skill-groups{grid-template-columns:1fr;}}
+.skill-card{
+  background:#fff; border:1px solid #E4E0D4; border-radius:var(--radius); padding:28px;
+}
+.skill-card h4{font-size:16px; color:#161B29; margin-bottom:6px;}
+.skill-card .skill-lane{font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; margin-bottom:16px; display:block;}
+.chip-row{display:flex; flex-wrap:wrap; gap:9px;}
+.chip{
+  font-size:13.5px; padding:7px 13px; border-radius:8px; background:#F6F4EE; border:1px solid #E4E0D4; color:#333A4C; font-weight:500;
+}
+
+/* =================== SERVICES =================== */
+.svc-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+@media (max-width:900px){.svc-grid{grid-template-columns:1fr;}}
+.svc-card{
+  border:1px solid var(--border); border-radius:var(--radius); padding:30px 26px; background:var(--surface);
+}
+.svc-card h3{font-size:19px; margin-bottom:16px; color:var(--ivory);}
+.svc-card ul li{
+  font-size:14.5px; color:#C7CBD6; padding:9px 0; border-top:1px solid var(--border);
+  display:flex; gap:10px;
+}
+.svc-card ul li:first-child{border-top:none;}
+.svc-card ul li svg{width:14px; height:14px; margin-top:4px; flex-shrink:0; color:var(--lane-color);}
+.svc-card.c-da{--lane-color:var(--teal);} .svc-card.c-wd{--lane-color:var(--indigo);} .svc-card.c-tc{--lane-color:var(--gold);}
+.svc-cta{
+  margin-top:44px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;
+  border:1px dashed var(--border); border-radius:var(--radius); padding:26px 30px;
+}
+.svc-cta p{font-size:18px; font-family:var(--display); font-weight:600; color:var(--ivory);}
+
+/* =================== PROJECTS =================== */
+.proj-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:26px;}
+@media (max-width:860px){.proj-grid{grid-template-columns:1fr;}}
+.proj-card{
+  border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; background:var(--surface);
+  display:flex; flex-direction:column;
+  transition:transform .35s var(--ease), box-shadow .35s var(--ease);
+}
+.proj-card:hover{transform:translateY(-5px); box-shadow:0 22px 44px -20px rgba(0,0,0,.55);}
+.proj-media{
+  height:190px; position:relative;
+  background:var(--m-bg);
+  overflow:hidden;
+}
+.proj-media .media-tag{
+  position:absolute; top:12px; left:12px; z-index:2; font-family:var(--mono); font-size:10px; letter-spacing:.08em;
+  background:rgba(0,0,0,.4); padding:5px 10px; border-radius:100px; color:#fff;
+}
+.mock-window{
+  position:absolute; left:16px; right:16px; top:38px; bottom:16px;
+  background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.14); border-radius:10px;
+  overflow:hidden; display:flex; flex-direction:column;
+  box-shadow:0 18px 30px -14px rgba(0,0,0,.45);
+}
+.mock-bar{height:24px; background:rgba(0,0,0,.28); display:flex; align-items:center; gap:5px; padding:0 10px; flex-shrink:0;}
+.mock-bar i{width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,.32); display:block;}
+.mock-body{flex:1; padding:12px 14px; display:flex; align-items:center; justify-content:center;}
+.mock-body svg{width:100%; height:100%; overflow:visible;}
+.proj-body{padding:24px 24px 26px; flex:1; display:flex; flex-direction:column;}
+.proj-body h3{font-size:19px; color:var(--ivory); margin-bottom:10px;}
+.proj-body p.desc{font-size:14.5px; color:var(--slate); line-height:1.65; margin-bottom:14px;}
+.proj-meta-label{font-family:var(--mono); font-size:11px; color:var(--slate-dark); letter-spacing:.08em; text-transform:uppercase; margin-bottom:6px; margin-top:14px;}
+.proj-meta-label:first-of-type{margin-top:0;}
+.proj-tech{display:flex; flex-wrap:wrap; gap:7px;}
+.proj-tech span{font-size:12px; font-family:var(--mono); padding:5px 10px; border-radius:6px; background:var(--surface-2); color:#C7CBD6;}
+.proj-features{margin-top:2px;}
+.proj-features li{font-size:13.5px; color:#B9BFCC; padding:3px 0; display:flex; gap:8px;}
+.proj-features li::before{content:"—"; color:var(--slate-dark);}
+.proj-obj{font-size:13.5px; color:#C7CBD6; font-style:italic; margin-top:12px; border-left:2px solid var(--border); padding-left:12px;}
+.proj-links{display:flex; gap:10px; margin-top:20px; flex-wrap:wrap;}
+
+/* =================== EXPERIENCE / TIMELINE =================== */
+.timeline-item{
+  display:grid; grid-template-columns:220px 1fr; gap:32px; padding:30px 0; border-top:1px solid var(--border);
+}
+.timeline-item:first-child{border-top:none;}
+@media (max-width:700px){.timeline-item{grid-template-columns:1fr; gap:10px;}}
+.timeline-item .when{font-family:var(--mono); font-size:13px; color:var(--slate);}
+.timeline-item h3{font-size:19px; color:var(--ivory); margin-bottom:4px;}
+.timeline-item .org{color:var(--teal); font-size:14.5px; font-weight:600; margin-bottom:14px; display:block;}
+.timeline-item p.note{color:var(--slate); font-size:15px; margin-bottom:14px; max-width:640px;}
+.skill-pills{display:flex; flex-wrap:wrap; gap:8px;}
+.skill-pills span{font-size:12.5px; font-family:var(--mono); padding:6px 12px; border-radius:100px; border:1px solid var(--border); color:#C7CBD6;}
+
+/* =================== EDUCATION =================== */
+.edu-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+@media (max-width:860px){.edu-grid{grid-template-columns:1fr;}}
+.edu-card{background:#fff; border:1px solid #E4E0D4; border-radius:var(--radius); padding:26px;}
+.edu-card .yr{font-family:var(--mono); font-size:12.5px; color:#A67F2C; margin-bottom:10px; display:block;}
+.edu-card h3{font-size:17px; color:#161B29; margin-bottom:6px; line-height:1.35;}
+.edu-card .inst{font-size:14px; color:#5B6478; margin-bottom:10px; display:block;}
+.edu-card .cgpa{font-family:var(--mono); font-size:13px; color:#1B8A7C; font-weight:600;}
+
+/* =================== CAREER FOCUS =================== */
+.focus-wrap{
+  border:1px solid var(--border); border-radius:var(--radius); padding:42px;
+  background:radial-gradient(circle at 15% 20%, rgba(63,214,199,.08), transparent 55%), var(--surface);
+}
+.focus-roles{display:flex; flex-wrap:wrap; gap:12px; margin-top:26px;}
+.focus-roles span{
+  font-size:14px; padding:10px 18px; border-radius:100px; border:1px solid var(--border); color:var(--ivory); font-weight:500;
+  transition:all .25s var(--ease);
+}
+.focus-roles span:hover{border-color:var(--teal); color:var(--teal); transform:translateY(-2px);}
+
+/* =================== RESUME =================== */
+.resume-box{
+  display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap;
+  border:1px solid #E4E0D4; background:#fff; border-radius:var(--radius); padding:36px 40px;
+}
+.resume-box h3{font-size:21px; color:#161B29; margin-bottom:8px;}
+.resume-box p{color:#5B6478; font-size:15px;}
+.resume-actions{display:flex; gap:14px; flex-wrap:wrap;}
+
+/* =================== CONTACT =================== */
+.contact-grid{display:grid; grid-template-columns:.85fr 1.15fr; gap:56px;}
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr;}}
+.contact-info-item{display:flex; align-items:center; gap:14px; padding:16px 0; border-top:1px solid var(--border);}
+.contact-info-item:first-child{border-top:none;}
+.contact-info-item .ic{width:38px; height:38px; border-radius:50%; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--teal); flex-shrink:0;}
+.contact-info-item .ic svg{width:16px; height:16px;}
+.contact-info-item .lbl{font-family:var(--mono); font-size:11px; color:var(--slate-dark); letter-spacing:.06em; text-transform:uppercase;}
+.contact-info-item .val{font-size:15.5px; color:var(--ivory); font-weight:500;}
+.whatsapp-cta{
+  margin-top:26px; display:inline-flex; align-items:center; gap:10px; padding:13px 22px;
+  border-radius:100px; border:1px solid var(--border); color:var(--ivory); font-size:14.5px; font-weight:600;
+  transition:all .25s var(--ease);
+}
+.whatsapp-cta svg{width:17px; height:17px; color:#3FD6C7;}
+.whatsapp-cta:hover{border-color:var(--teal); transform:translateY(-2px);}
+
+form.contact-form{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:34px;
+  display:grid; gap:18px;
+}
+.form-row{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+@media (max-width:560px){.form-row{grid-template-columns:1fr;}}
+.form-field label{display:block; font-family:var(--mono); font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--slate); margin-bottom:8px;}
+.form-field input, .form-field textarea{
+  width:100%; background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm);
+  padding:13px 14px; color:var(--ivory); font-family:var(--body); font-size:14.5px; resize:vertical;
+  transition:border-color .25s var(--ease);
+}
+.form-field input:focus, .form-field textarea:focus{outline:none; border-color:var(--teal);}
+.form-field input::placeholder, .form-field textarea::placeholder{color:var(--slate-dark);}
+.form-note{font-size:12.5px; color:var(--slate-dark);}
+
+/* =================== FOOTER =================== */
+footer{border-top:1px solid var(--border); padding:52px 0 32px;}
+.footer-top{display:flex; justify-content:space-between; align-items:flex-start; gap:30px; flex-wrap:wrap; padding-bottom:34px; border-bottom:1px solid var(--border);}
+.footer-brand{font-family:var(--display); font-size:20px; font-weight:700; color:var(--ivory);}
+.footer-role{font-family:var(--mono); font-size:12.5px; color:var(--slate); margin-top:6px;}
+.footer-socials{display:flex; gap:12px;}
+.footer-bottom{display:flex; justify-content:space-between; padding-top:26px; flex-wrap:wrap; gap:10px; font-size:13px; color:var(--slate-dark);}
+
+/* focus visibility */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+  outline:2px solid var(--teal); outline-offset:2px;
+}
+</style>
+</head>
+<body>
+
+<!-- =================== NAV =================== -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#home" class="brand"><span class="brand-dot"></span>AM.</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn btn-primary btn-sm nav-cta-mobile">Hire Me</a>
+    </nav>
+    <a href="#contact" class="btn btn-primary btn-sm nav-cta">Hire Me</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- =================== HERO =================== -->
+<section id="home" class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-kicker">Avishek Mitra · Kolkata, India</div>
+        <h1 class="reveal">Hi, I'm <span>Avishek Mitra</span></h1>
+        <div class="role-line reveal"><b>Data Analyst</b><em>/</em><b>Web Developer</b><em>/</em><b>Technology Consultant</b></div>
+        <p class="lede reveal">I help businesses and organizations turn data into meaningful insights, build modern digital solutions, and solve technology-driven business problems.</p>
+        <div class="hero-ctas reveal">
+          <a href="#projects" class="btn btn-primary">View My Projects</a>
+          <a href="#contact" class="btn btn-ghost">Let's Work Together</a>
+        </div>
+        <div class="hero-socials reveal">
+          <a class="icon-btn" href="https://www.linkedin.com/in/avishek-mitra-95182226a" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="7.5" y1="10.5" x2="7.5" y2="16.5"/><circle cx="7.5" cy="7" r="1"/><path d="M11.5 16.5v-4a2 2 0 0 1 4 0v4"/><line x1="11.5" y1="10.5" x2="11.5" y2="16.5"/></svg>
+          </a>
+          <a class="icon-btn" href="https://github.com/Avishek-Mitra" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.6 2.8 5.5 3.1 5.5 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.1 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+          </a>
+          <a class="icon-btn" href="mailto:avishekmitra773@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          </a>
+          <a class="icon-btn" href="https://wa.me/917001209871" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l1.4-4.1A7.9 7.9 0 1 1 8.6 19L4 20z"/><path d="M9 10.5c0 3 2.5 5.5 5.5 5.5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="photo-wrap reveal">
+        <div class="photo-frame">
+          <img src="Personal-Image.jpeg" alt="Avishek Mitra">
+        </div>
+        <div class="photo-badge"><span>●</span> Available for opportunities</div>
+      </div>
+    </div>
+
+    <div class="signal-wrap reveal">
+      <svg viewBox="0 0 1000 90" preserveAspectRatio="none">
+        <path class="lane-path" d="M0,20 C120,20 130,10 250,10 S380,30 500,30 S620,5 750,5 S880,20 1000,20" stroke="var(--teal)" stroke-width="2" fill="none" opacity="0.85"/>
+        <path class="lane-path" d="M0,45 C120,45 130,55 250,55 S380,35 500,35 S620,60 750,60 S880,45 1000,45" stroke="var(--indigo)" stroke-width="2" fill="none" opacity="0.85" style="animation-delay:-3s"/>
+        <path class="lane-path" d="M0,70 C120,70 130,60 250,60 S380,80 500,80 S620,55 750,55 S880,70 1000,70" stroke="var(--gold)" stroke-width="2" fill="none" opacity="0.85" style="animation-delay:-6s"/>
+        <circle class="pulse-dot" cx="500" cy="30" r="5" fill="var(--teal)"/>
+      </svg>
+      <div class="lane-legend">
+        <div class="item"><span class="sw sw-da"></span> Data Analytics</div>
+        <div class="item"><span class="sw sw-wd"></span> Web Development</div>
+        <div class="item"><span class="sw sw-tc"></span> Technology Consulting</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== ABOUT =================== -->
+<section id="about" class="light section-pad">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="dot"></span>About</div>
+      <h2>An analytical mind with a builder's instinct</h2>
+    </div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p>Avishek Mitra is a B.Tech graduate in Electronics &amp; Communication Engineering with a strong interest in data analytics, web development, artificial intelligence and technology-driven business solutions.</p>
+        <p>He has experience working with business operations and customer-facing processes, and is now focused on building a career at the intersection of data analytics, web development and technology consulting — where technical depth meets business understanding.</p>
+        <p>Avishek enjoys solving practical problems using data, technology and automation, and is comfortable working with both technical and non-technical stakeholders — translating requirements into working solutions, and results into decisions people can act on.</p>
+      </div>
+      <div class="reveal">
+        <div class="trait-list">
+          <div class="trait"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-4 4"/></svg>Analytical mindset</div>
+          <div class="trait"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>Problem-solving ability</div>
+          <div class="trait"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12h8M8 8h8M8 16h5"/></svg>Business understanding</div>
+          <div class="trait"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 16 4-4-4-4M6 8l-4 4 4 4M14.5 4l-5 16"/></svg>Technical knowledge</div>
+          <div class="trait"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Clear communication</div>
+          <div class="trait"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>Willingness to learn</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== CORE EXPERTISE =================== -->
+<section id="expertise" class="section-pad">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="dot"></span>Core Expertise</div>
+      <h2>Three disciplines, one problem-solving approach</h2>
+      <p>Each lane below informs the others — data findings shape what gets built, and business context shapes what gets measured.</p>
+    </div>
+    <div class="cards-3">
+      <div class="xcard c-da reveal">
+        <div class="bar"></div>
+        <span class="num">[ DA ] Data Analytics</span>
+        <h3>Data Analytics</h3>
+        <p class="desc">Transforming raw data into meaningful insights using data analysis, visualization and business intelligence tools.</p>
+        <div class="taglist">
+          <span>Data Cleaning</span><span>Data Analysis</span><span>EDA</span><span>Data Visualization</span><span>Business Reporting</span><span>Dashboard Development</span><span>SQL Analysis</span><span>Excel Analytics</span><span>Power BI</span>
+        </div>
+      </div>
+      <div class="xcard c-wd reveal">
+        <div class="bar"></div>
+        <span class="num">[ WD ] Web Development</span>
+        <h3>Web Development</h3>
+        <p class="desc">Building responsive and user-friendly websites and web applications for businesses and individuals.</p>
+        <div class="taglist">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span><span>Flask</span><span>MySQL</span><span>SQLite</span><span>Responsive Design</span><span>Git &amp; GitHub</span>
+        </div>
+      </div>
+      <div class="xcard c-tc reveal">
+        <div class="bar"></div>
+        <span class="num">[ TC ] Technology Consulting</span>
+        <h3>Technology / Business Consulting</h3>
+        <p class="desc">Helping businesses identify practical technology solutions, improve processes and use digital tools more effectively.</p>
+        <div class="taglist">
+          <span>Business Process Understanding</span><span>Requirement Analysis</span><span>Technology Recommendations</span><span>AI Tool Consulting</span><span>Digital Transformation</span><span>Workflow Improvement</span><span>Data-driven Decisions</span><span>Client Communication</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SKILLS =================== -->
+<section id="skills" class="light section-pad">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="dot"></span>Skills</div>
+      <h2>Tools of the trade</h2>
+      <p>Organized by how they're actually used, not ranked by arbitrary percentages.</p>
+    </div>
+    <div class="skill-groups">
+      <div class="skill-card reveal">
+        <h4>Data Analytics</h4>
+        <span class="skill-lane" style="color:#1B8A7C;">[ DA ]</span>
+        <div class="chip-row">
+          <span class="chip">Excel</span><span class="chip">Advanced Excel</span><span class="chip">SQL</span><span class="chip">MySQL</span><span class="chip">Power BI</span><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Matplotlib</span><span class="chip">Seaborn</span><span class="chip">Data Cleaning</span><span class="chip">EDA</span><span class="chip">Data Visualization</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h4>Programming &amp; Development</h4>
+        <span class="skill-lane" style="color:#4C58C9;">[ WD ]</span>
+        <div class="chip-row">
+          <span class="chip">Python</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">Flask</span><span class="chip">MySQL</span><span class="chip">SQLite</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h4>Tools &amp; Technologies</h4>
+        <span class="skill-lane" style="color:#5B6478;">[ TOOLS ]</span>
+        <div class="chip-row">
+          <span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">VS Code</span><span class="chip">Jupyter Notebook</span><span class="chip">Microsoft Excel</span><span class="chip">Power BI</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h4>AI &amp; Automation</h4>
+        <span class="skill-lane" style="color:#A67F2C;">[ TC ]</span>
+        <div class="chip-row">
+          <span class="chip">ChatGPT</span><span class="chip">Generative AI</span><span class="chip">AI Productivity Tools</span><span class="chip">AI-assisted Data Analysis</span><span class="chip">AI-based Business Solutions</span><span class="chip">AI Workflow Automation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SERVICES =================== -->
+<section id="services" class="section-pad">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="dot"></span>Services</div>
+      <h2>How I Can Help Your Business</h2>
+      <p>Practical, focused engagements for small and medium-sized businesses, startups and individuals.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card c-da reveal">
+        <h3>Data Analytics</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Excel dashboards</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Data cleaning</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Data analysis</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>SQL reporting</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Power BI dashboards</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Business reports</li>
+        </ul>
+      </div>
+      <div class="svc-card c-wd reveal">
+        <h3>Website Development</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Business websites</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Restaurant websites</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Salon websites</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Portfolio websites</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Company websites</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Landing pages</li>
+        </ul>
+      </div>
+      <div class="svc-card c-tc reveal">
+        <h3>Consulting</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Digital transformation support</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>AI tool recommendations</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Business process improvement</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Data-driven decision making</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Technology recommendations</li>
+        </ul>
+      </div>
+    </div>
+    <div class="svc-cta reveal">
+      <p>Have a project in mind? Let's discuss it.</p>
+      <a href="#contact" class="btn btn-primary">Start the Conversation</a>
+    </div>
+  </div>
+</section>
+
+<!-- =================== PROJECTS =================== -->
+<section id="projects" class="light section-pad">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="dot"></span>Projects</div>
+      <h2>Selected work</h2>
+      <p>A mix of data analysis, web applications and applied machine-learning projects. Preview graphics below are illustrative mockups — swap in real screenshots any time.</p>
+    </div>
+
+    <div class="proj-grid">
+
+      <!-- Project 1 -->
+      <div class="proj-card reveal">
+        <div class="proj-media" style="--m-bg:linear-gradient(135deg,#0E2E2A,#1E4E49);">
+          <span class="media-tag mono">[ DA ] Sales Dashboard</span>
+          <div class="mock-window">
+            <div class="mock-bar"><i></i><i></i><i></i></div>
+            <div class="mock-body">
+              <svg viewBox="0 0 260 140">
+                <line x1="10" y1="120" x2="250" y2="120" stroke="rgba(255,255,255,.2)" stroke-width="1"/>
+                <rect x="20" y="70" width="22" height="50" rx="2" fill="#3FD6C7" opacity=".85"/>
+                <rect x="55" y="40" width="22" height="80" rx="2" fill="#3FD6C7" opacity=".6"/>
+                <rect x="90" y="85" width="22" height="35" rx="2" fill="#3FD6C7" opacity=".85"/>
+                <rect x="125" y="20" width="22" height="100" rx="2" fill="#3FD6C7"/>
+                <rect x="160" y="60" width="22" height="60" rx="2" fill="#3FD6C7" opacity=".6"/>
+                <rect x="195" y="95" width="22" height="25" rx="2" fill="#3FD6C7" opacity=".85"/>
+                <polyline points="20,55 55,30 90,65 125,10 160,45 195,80 217,60" fill="none" stroke="#D8B463" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="proj-body">
+          <h3>Blinkit Sales Analysis</h3>
+          <p class="desc">A data analysis project focused on analyzing Blinkit-style sales data to identify business performance patterns and meaningful insights.</p>
+          <div class="proj-meta-label">Technologies</div>
+          <div class="proj-tech"><span>Python</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span><span>Excel</span></div>
+          <div class="proj-meta-label">Analysis Areas</div>
+          <ul class="proj-features">
+            <li>Sales performance</li><li>Product categories</li><li>Outlet performance</li><li>Customer-related patterns</li><li>Revenue insights</li><li>Data visualization</li>
+          </ul>
+          <p class="proj-obj">Objective: surface performance patterns across products and outlets to support data-driven business decisions.</p>
+          <div class="proj-links">
+            <a href="[ADD GITHUB PROJECT LINK]" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="proj-card reveal">
+        <div class="proj-media" style="--m-bg:linear-gradient(135deg,#1F2247,#3A3F82);">
+          <span class="media-tag mono">[ WD ] Expense Tracker</span>
+          <div class="mock-window">
+            <div class="mock-bar"><i></i><i></i><i></i></div>
+            <div class="mock-body">
+              <svg viewBox="0 0 260 140">
+                <rect x="14" y="14" width="232" height="34" rx="7" fill="rgba(255,255,255,.08)"/>
+                <text x="26" y="35" fill="#EDEAE1" font-size="12" font-family="monospace">Total spent this month</text>
+                <text x="220" y="35" fill="#7C8CFF" font-size="13" font-family="monospace" text-anchor="end">₹4,120</text>
+                <rect x="14" y="58" width="112" height="72" rx="8" fill="rgba(255,255,255,.06)"/>
+                <text x="24" y="76" fill="#8B93A7" font-size="9" font-family="monospace">FOOD</text>
+                <rect x="24" y="84" width="92" height="8" rx="4" fill="#7C8CFF" opacity=".8"/>
+                <text x="24" y="106" fill="#8B93A7" font-size="9" font-family="monospace">TRAVEL</text>
+                <rect x="24" y="114" width="56" height="8" rx="4" fill="#7C8CFF" opacity=".5"/>
+                <rect x="134" y="58" width="112" height="72" rx="8" fill="rgba(255,255,255,.06)"/>
+                <text x="144" y="76" fill="#8B93A7" font-size="9" font-family="monospace">BOOKS</text>
+                <rect x="144" y="84" width="40" height="8" rx="4" fill="#D8B463" opacity=".8"/>
+                <text x="144" y="106" fill="#8B93A7" font-size="9" font-family="monospace">OTHER</text>
+                <rect x="144" y="114" width="70" height="8" rx="4" fill="#3FD6C7" opacity=".7"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="proj-body">
+          <h3>College Student Expense Tracker</h3>
+          <p class="desc">A web-based application designed to help students record, manage and analyze their daily expenses.</p>
+          <div class="proj-meta-label">Technologies</div>
+          <div class="proj-tech"><span>HTML</span><span>CSS</span><span>Python</span><span>Flask</span><span>SQLite / Excel</span></div>
+          <div class="proj-meta-label">Features</div>
+          <ul class="proj-features">
+            <li>Add expenses</li><li>Track expenses</li><li>Categorize expenses</li><li>View spending information</li><li>Manage student financial records</li>
+          </ul>
+          <p class="proj-obj">Objective: give students a simple way to stay on top of daily spending.</p>
+          <div class="proj-links">
+            <a href="[ADD GITHUB PROJECT LINK]" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">View on GitHub</a>
+            <a href="[ADD LIVE DEMO LINK]" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="proj-card reveal">
+        <div class="proj-media" style="--m-bg:linear-gradient(135deg,#3A2F14,#6E5A2B);">
+          <span class="media-tag mono">[ WD ] Attendance System</span>
+          <div class="mock-window">
+            <div class="mock-bar"><i></i><i></i><i></i></div>
+            <div class="mock-body">
+              <svg viewBox="0 0 260 140">
+                <circle cx="130" cy="58" r="30" fill="none" stroke="#D8B463" stroke-width="2"/>
+                <path d="M108 90c0-14 10-20 22-20s22 6 22 20" fill="none" stroke="#D8B463" stroke-width="2"/>
+                <rect x="88" y="26" width="16" height="16" fill="none" stroke="#D8B463" stroke-width="2"/>
+                <rect x="156" y="26" width="16" height="16" fill="none" stroke="#D8B463" stroke-width="2"/>
+                <rect x="88" y="72" width="16" height="16" fill="none" stroke="#D8B463" stroke-width="2"/>
+                <rect x="156" y="72" width="16" height="16" fill="none" stroke="#D8B463" stroke-width="2"/>
+                <rect x="30" y="112" width="200" height="10" rx="5" fill="rgba(255,255,255,.08)"/>
+                <rect x="30" y="112" width="150" height="10" rx="5" fill="#D8B463" opacity=".75"/>
+                <text x="30" y="106" fill="#8B93A7" font-size="9" font-family="monospace">MATCH CONFIDENCE 93%</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="proj-body">
+          <h3>Face Recognition Attendance System</h3>
+          <p class="desc">A computer-vision-based attendance management system that uses face recognition to automate attendance recording.</p>
+          <div class="proj-meta-label">Technologies</div>
+          <div class="proj-tech"><span>Python</span><span>OpenCV</span><span>Flask</span><span>MySQL</span></div>
+          <div class="proj-meta-label">Features</div>
+          <ul class="proj-features">
+            <li>Face detection</li><li>Face recognition</li><li>Attendance recording</li><li>Database integration</li><li>Web interface</li>
+          </ul>
+          <p class="proj-obj">Objective: reduce manual effort in recording attendance through automation.</p>
+          <div class="proj-links">
+            <a href="[ADD GITHUB PROJECT LINK]" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">View on GitHub</a>
+            <a href="[ADD LIVE DEMO LINK]" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="proj-card reveal">
+        <div class="proj-media" style="--m-bg:linear-gradient(135deg,#0E2E2A,#1E4E49);">
+          <span class="media-tag mono">[ DA ] Traffic Analysis</span>
+          <div class="mock-window">
+            <div class="mock-bar"><i></i><i></i><i></i></div>
+            <div class="mock-body">
+              <svg viewBox="0 0 260 140">
+                <rect x="0" y="55" width="260" height="30" fill="rgba(255,255,255,.06)"/>
+                <line x1="0" y1="70" x2="260" y2="70" stroke="rgba(255,255,255,.25)" stroke-width="2" stroke-dasharray="10 8"/>
+                <rect x="30" y="58" width="34" height="20" rx="4" fill="none" stroke="#3FD6C7" stroke-width="1.6"/>
+                <text x="32" y="55" fill="#3FD6C7" font-size="8" font-family="monospace">CAR 0.94</text>
+                <rect x="110" y="60" width="30" height="18" rx="4" fill="none" stroke="#3FD6C7" stroke-width="1.6"/>
+                <text x="112" y="57" fill="#3FD6C7" font-size="8" font-family="monospace">CAR 0.88</text>
+                <rect x="190" y="58" width="36" height="20" rx="4" fill="none" stroke="#3FD6C7" stroke-width="1.6"/>
+                <text x="192" y="55" fill="#3FD6C7" font-size="8" font-family="monospace">TRUCK 0.91</text>
+                <circle cx="47" cy="68" r="2" fill="#3FD6C7"/>
+                <circle cx="125" cy="69" r="2" fill="#3FD6C7"/>
+                <circle cx="208" cy="68" r="2" fill="#3FD6C7"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="proj-body">
+          <h3>Traffic Analysis System</h3>
+          <p class="desc">A computer vision project designed to analyze traffic and detect and track vehicles.</p>
+          <div class="proj-meta-label">Technologies</div>
+          <div class="proj-tech"><span>Python</span><span>YOLOv8</span><span>DeepSORT</span><span>OpenCV</span></div>
+          <div class="proj-meta-label">Features</div>
+          <ul class="proj-features">
+            <li>Vehicle detection</li><li>Object tracking</li><li>Traffic monitoring</li><li>Video-based analysis</li>
+          </ul>
+          <p class="proj-obj">Objective: apply object detection and tracking to real-world traffic footage.</p>
+          <div class="proj-links">
+            <a href="[ADD GITHUB PROJECT LINK]" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="proj-card reveal">
+        <div class="proj-media" style="--m-bg:linear-gradient(135deg,#3A2F14,#6E5A2B);">
+          <span class="media-tag mono">[ WD ] News Classifier</span>
+          <div class="mock-window">
+            <div class="mock-bar"><i></i><i></i><i></i></div>
+            <div class="mock-body">
+              <svg viewBox="0 0 260 140">
+                <rect x="16" y="14" width="228" height="60" rx="6" fill="rgba(255,255,255,.07)"/>
+                <line x1="28" y1="30" x2="220" y2="30" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
+                <line x1="28" y1="42" x2="200" y2="42" stroke="rgba(255,255,255,.18)" stroke-width="2"/>
+                <line x1="28" y1="54" x2="180" y2="54" stroke="rgba(255,255,255,.18)" stroke-width="2"/>
+                <line x1="28" y1="66" x2="150" y2="66" stroke="rgba(255,255,255,.18)" stroke-width="2"/>
+                <rect x="16" y="86" width="108" height="40" rx="8" fill="rgba(216,164,99,.18)" stroke="#D8B463" stroke-width="1.4"/>
+                <text x="70" y="110" fill="#D8B463" font-size="12" font-family="monospace" text-anchor="middle">FAKE 82%</text>
+                <rect x="136" y="86" width="108" height="40" rx="8" fill="rgba(63,214,199,.12)" stroke="#3FD6C7" stroke-width="1.4"/>
+                <text x="190" y="110" fill="#3FD6C7" font-size="12" font-family="monospace" text-anchor="middle">REAL 18%</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="proj-body">
+          <h3>Fake News Detector</h3>
+          <p class="desc">A machine-learning-based application designed to classify news content and identify potentially fake news.</p>
+          <div class="proj-meta-label">Technologies</div>
+          <div class="proj-tech"><span>Python</span><span>Flask</span><span>Scikit-learn</span><span>Machine Learning</span></div>
+          <div class="proj-meta-label">Features</div>
+          <ul class="proj-features">
+            <li>News input</li><li>Text processing</li><li>Prediction</li><li>Web interface</li>
+          </ul>
+          <p class="proj-obj">Objective: explore applied NLP and classification through a usable web interface.</p>
+          <div class="proj-links">
+            <a href="[ADD GITHUB PROJECT LINK]" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">View on GitHub</a>
+            <a href="[ADD LIVE DEMO LINK]" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="proj-card reveal">
+        <div class="proj-media" style="--m-bg:linear-gradient(135deg,#0E2E2A,#1E4E49);">
+          <span class="media-tag mono">[ DA ] Student Database</span>
+          <div class="mock-window">
+            <div class="mock-bar"><i></i><i></i><i></i></div>
+            <div class="mock-body">
+              <svg viewBox="0 0 260 140">
+                <rect x="14" y="16" width="232" height="20" rx="4" fill="rgba(255,255,255,.1)"/>
+                <text x="24" y="30" fill="#8B93A7" font-size="9" font-family="monospace">ID   NAME        DEPT</text>
+                <g font-family="monospace" font-size="9" fill="#C7CBD6">
+                  <text x="24" y="54">01</text><text x="60" y="54">R. Sharma</text><text x="180" y="54">ECE</text>
+                  <text x="24" y="74">02</text><text x="60" y="74">A. Mitra</text><text x="180" y="74">ECE</text>
+                  <text x="24" y="94">03</text><text x="60" y="94">S. Das</text><text x="180" y="94">CSE</text>
+                  <text x="24" y="114">04</text><text x="60" y="114">P. Roy</text><text x="180" y="114">CSE</text>
+                </g>
+                <line x1="14" y1="42" x2="246" y2="42" stroke="rgba(255,255,255,.12)"/>
+                <line x1="14" y1="62" x2="246" y2="62" stroke="rgba(255,255,255,.08)"/>
+                <line x1="14" y1="82" x2="246" y2="82" stroke="rgba(255,255,255,.08)"/>
+                <line x1="14" y1="102" x2="246" y2="102" stroke="rgba(255,255,255,.08)"/>
+                <rect x="14" y="46" width="232" height="16" fill="#3FD6C7" opacity=".08"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="proj-body">
+          <h3>Student Management System</h3>
+          <p class="desc">A database-oriented application for managing student information and records.</p>
+          <div class="proj-meta-label">Technologies</div>
+          <div class="proj-tech"><span>SQL</span><span>MySQL</span><span>Database Management</span></div>
+          <div class="proj-meta-label">Features</div>
+          <ul class="proj-features">
+            <li>Student records</li><li>Database operations</li><li>Search and update</li><li>Data management</li>
+          </ul>
+          <p class="proj-obj">Objective: apply relational database design to a real record-keeping problem.</p>
+          <div class="proj-links">
+            <a href="[ADD GITHUB PROJECT LINK]" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 7 -->
+      <div class="proj-card reveal">
+        <div class="proj-media" style="--m-bg:linear-gradient(135deg,#2E2712,#4A3E1F);">
+          <span class="media-tag mono">[ TC ] IoT Automation</span>
+          <div class="mock-window">
+            <div class="mock-bar"><i></i><i></i><i></i></div>
+            <div class="mock-body">
+              <svg viewBox="0 0 260 140">
+                <path d="M130 20c14 16 22 28 22 40a22 22 0 1 1-44 0c0-12 8-24 22-40Z" fill="none" stroke="#D8B463" stroke-width="2"/>
+                <text x="130" y="90" fill="#8B93A7" font-size="9" font-family="monospace" text-anchor="middle">SOIL MOISTURE</text>
+                <rect x="60" y="98" width="140" height="10" rx="5" fill="rgba(255,255,255,.08)"/>
+                <rect x="60" y="98" width="46" height="10" rx="5" fill="#D8B463"/>
+                <text x="60" y="128" fill="#D8B463" font-size="9" font-family="monospace">33% — PUMP: ON</text>
+                <circle cx="210" cy="112" r="5" fill="#3FD6C7"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="proj-body">
+          <h3>Automated Plant Watering System</h3>
+          <p class="desc">An automation and IoT-oriented project designed to automatically manage plant watering based on environmental conditions.</p>
+          <div class="proj-meta-label">Technologies</div>
+          <div class="proj-tech"><span>[ADD EXACT TECHNOLOGIES USED]</span></div>
+          <div class="proj-meta-label">Features</div>
+          <ul class="proj-features">
+            <li>Automation</li><li>Sensors</li><li>Plant monitoring</li><li>Water management</li>
+          </ul>
+          <p class="proj-obj">Objective: reduce manual plant care through sensor-driven automation.</p>
+          <div class="proj-links">
+            <a href="[ADD GITHUB PROJECT LINK]" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 8 -->
+      <div class="proj-card reveal">
+        <div class="proj-media" style="--m-bg:linear-gradient(135deg,#1F2247,#3A3F82);">
+          <span class="media-tag mono">[ WD ] Browser Game</span>
+          <div class="mock-window">
+            <div class="mock-bar"><i></i><i></i><i></i></div>
+            <div class="mock-body">
+              <svg viewBox="0 0 260 140">
+                <line x1="100" y1="20" x2="100" y2="120" stroke="rgba(255,255,255,.3)" stroke-width="2"/>
+                <line x1="140" y1="20" x2="140" y2="120" stroke="rgba(255,255,255,.3)" stroke-width="2"/>
+                <line x1="60" y1="53" x2="180" y2="53" stroke="rgba(255,255,255,.3)" stroke-width="2"/>
+                <line x1="60" y1="87" x2="180" y2="87" stroke="rgba(255,255,255,.3)" stroke-width="2"/>
+                <text x="80" y="44" fill="#7C8CFF" font-size="24" font-family="sans-serif" text-anchor="middle">X</text>
+                <text x="120" y="78" fill="#D8B463" font-size="24" font-family="sans-serif" text-anchor="middle">O</text>
+                <text x="80" y="112" fill="#7C8CFF" font-size="24" font-family="sans-serif" text-anchor="middle">X</text>
+                <text x="160" y="44" fill="#D8B463" font-size="24" font-family="sans-serif" text-anchor="middle">O</text>
+                <text x="160" y="112" fill="#7C8CFF" font-size="24" font-family="sans-serif" text-anchor="middle">X</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="proj-body">
+          <h3>Tic-Tac-Toe Web Application</h3>
+          <p class="desc">A browser-based interactive Tic-Tac-Toe game developed to demonstrate front-end development and JavaScript logic.</p>
+          <div class="proj-meta-label">Technologies</div>
+          <div class="proj-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <div class="proj-meta-label">Features</div>
+          <ul class="proj-features">
+            <li>Interactive gameplay</li><li>Game logic</li><li>Responsive interface</li>
+          </ul>
+          <p class="proj-obj">Objective: demonstrate clean front-end logic and interactive UI design.</p>
+          <div class="proj-links">
+            <a href="[ADD GITHUB PROJECT LINK]" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">View on GitHub</a>
+            <a href="[ADD LIVE DEMO LINK]" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =================== EXPERIENCE =================== -->
+<section id="experience" class="section-pad">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="dot"></span>Experience</div>
+      <h2>Work experience</h2>
+      <p>Client-facing and operational experience that carries directly into analytics, consulting and technology roles.</p>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="when mono">House of Edtech</div>
+      <div>
+        <h3>Business Development Associate — Operations &amp; Customer Support</h3>
+        <span class="org">House of Edtech</span>
+        <p class="note">Worked across business development, operations and customer support — communicating with clients, managing follow-ups, handling data and supporting day-to-day processes. This client-facing, process-oriented experience builds a foundation that carries directly into data analytics, business analysis, operations analytics and technology consulting roles, where understanding the business side is as important as the technical side.</p>
+        <div class="skill-pills">
+          <span>Customer communication</span><span>Sales &amp; business development</span><span>Customer support</span><span>Operations</span><span>Follow-up management</span><span>Data handling</span><span>CRM / process management</span><span>Client communication</span><span>Problem solving</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== EDUCATION =================== -->
+<section id="education" class="light section-pad">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="dot"></span>Education</div>
+      <h2>Academic background</h2>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <span class="yr">2022 – 2025</span>
+        <h3>B.Tech — Electronics &amp; Communication Engineering</h3>
+        <span class="inst">Institute of Engineering &amp; Management, Kolkata</span>
+        <span class="cgpa">CGPA: 8.48</span>
+      </div>
+      <div class="edu-card reveal">
+        <span class="yr">2019 – 2022</span>
+        <h3>Diploma — Metallurgical Engineering</h3>
+        <span class="inst">Kazi Nazrul University</span>
+      </div>
+      <div class="edu-card reveal">
+        <span class="yr">Internship</span>
+        <h3>Metallurgical Engineering Internship</h3>
+        <span class="inst">TATA Hitachi</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== CAREER FOCUS =================== -->
+<section id="focus" class="section-pad">
+  <div class="container">
+    <div class="focus-wrap reveal">
+      <div class="eyebrow"><span class="dot"></span>Career Focus</div>
+      <h2 style="font-size:clamp(24px,3vw,32px); color:var(--ivory);">What I'm Looking For</h2>
+      <p style="color:var(--slate); margin-top:14px; max-width:620px;">Avishek is looking for opportunities across the following related roles — where analytical thinking, technical building and business understanding all come into play.</p>
+      <div class="focus-roles">
+        <span>Data Analyst</span><span>Business Analyst</span><span>Operations Analyst</span><span>Research Analyst</span><span>BI Analyst</span><span>Technical Consultant</span><span>Technology Consultant</span><span>AI Consultant</span><span>Web Developer</span><span>Junior Data / Business Consultant</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== RESUME =================== -->
+<section id="resume" class="light section-pad" style="padding-top:0;">
+  <div class="container">
+    <div class="resume-box reveal">
+      <div>
+        <h3>Download My Resume</h3>
+        <p>A full breakdown of education, skills, projects and experience in one document.</p>
+      </div>
+      <div class="resume-actions">
+        <a href="CV_Avishek Mitra.pdf" target="_blank" rel="noopener" class="btn btn-primary">Download Resume</a>
+        <a href="https://www.linkedin.com/in/avishek-mitra-95182226a" target="_blank" rel="noopener" class="btn btn-ghost">View LinkedIn Profile</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== CONTACT =================== -->
+<section id="contact" class="section-pad">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="dot"></span>Contact</div>
+      <h2>Let's work together</h2>
+      <p>Open to full-time roles, freelance projects and consulting engagements. Reach out and I'll get back to you as soon as possible.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="contact-info-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+          <div><span class="lbl">Email</span><br><span class="val">avishekmitra773@gmail.com</span></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.3a16 16 0 0 0 6 6l1.5-1.5a2 2 0 0 1 2.1-.4c1 .4 2 .6 3 .7a2 2 0 0 1 1.7 2z"/></svg></div>
+          <div><span class="lbl">Phone</span><br><span class="val">+91 70012 09871</span></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="7.5" y1="10.5" x2="7.5" y2="16.5"/><circle cx="7.5" cy="7" r="1"/><line x1="11.5" y1="10.5" x2="11.5" y2="16.5"/><path d="M11.5 16.5v-4a2 2 0 0 1 4 0v4"/></svg></div>
+          <div><span class="lbl">LinkedIn</span><br><a class="val" href="https://www.linkedin.com/in/avishek-mitra-95182226a" target="_blank" rel="noopener">https://www.linkedin.com/in/avishek-mitra-95182226a</a></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.6 2.8 5.5 3.1 5.5 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.1 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></div>
+          <div><span class="lbl">GitHub</span><br><a class="val" href="https://github.com/Avishek-Mitra" target="_blank" rel="noopener">https://github.com/Avishek-Mitra</a></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><span class="lbl">Location</span><br><span class="val">Kolkata, India</span></div>
+        </div>
+        <a class="whatsapp-cta" href="https://wa.me/917001209871" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l1.4-4.1A7.9 7.9 0 1 1 8.6 19L4 20z"/><path d="M9 10.5c0 3 2.5 5.5 5.5 5.5"/></svg>
+          Message on WhatsApp
+        </a>
+      </div>
+
+      <form class="contact-form reveal" id="contactForm">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name" name="name" placeholder="Your full name" required>
+          </div>
+          <div class="form-field">
+            <label for="cf-email">Email</label>
+            <input type="email" id="cf-email" name="email" placeholder="you@example.com" required>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="cf-subject">Subject</label>
+          <input type="text" id="cf-subject" name="subject" placeholder="What's this about?" required>
+        </div>
+        <div class="form-field">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" rows="5" placeholder="Tell me a bit about your project or opportunity..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="justify-self:start;">Send Message</button>
+        <p class="form-note">Submitting opens your email client with this message pre-filled, addressed to avishekmitra773@gmail.com. Replace this behavior with a form backend (e.g. Formspree) if you'd prefer an in-page send.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Avishek Mitra</div>
+        <div class="footer-role mono">Data Analyst · Web Developer · Technology Consultant</div>
+      </div>
+      <div class="footer-socials">
+        <a class="icon-btn" href="https://www.linkedin.com/in/avishek-mitra-95182226a" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="7.5" y1="10.5" x2="7.5" y2="16.5"/><circle cx="7.5" cy="7" r="1"/><line x1="11.5" y1="10.5" x2="11.5" y2="16.5"/><path d="M11.5 16.5v-4a2 2 0 0 1 4 0v4"/></svg></a>
+        <a class="icon-btn" href="https://github.com/Avishek-Mitra" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.6 2.8 5.5 3.1 5.5 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.1 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a>
+        <a class="icon-btn" href="mailto:avishekmitra773@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+        <a class="icon-btn" href="https://wa.me/917001209871" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l1.4-4.1A7.9 7.9 0 1 1 8.6 19L4 20z"/><path d="M9 10.5c0 3 2.5 5.5 5.5 5.5"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Avishek Mitra. All Rights Reserved.</span>
+      <span>Kolkata, India</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobile nav toggle
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', open);
+});
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  navLinks.classList.remove('open');
+  navToggle.setAttribute('aria-expanded', false);
+}));
+
+// Reveal on scroll
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+revealEls.forEach(el => io.observe(el));
+
+// Contact form -> mailto fallback (no backend included by default)
+const form = document.getElementById('contactForm');
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  const name = document.getElementById('cf-name').value;
+  const email = document.getElementById('cf-email').value;
+  const subject = document.getElementById('cf-subject').value;
+  const message = document.getElementById('cf-message').value;
+  const to = "avishekmitra773@gmail.com";
+  const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+  window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+});
+</script>
+
+</body>
+</html>
